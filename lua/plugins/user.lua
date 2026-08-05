@@ -125,7 +125,7 @@ return {
   --     })
   --
   --     -- optional keybinding
-  --     vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
+  --     vim.keymap.set('n', '<leader>E', ':NvimTreeToggle<CR>', { silent = true })
   --   end,
   -- },
   {
@@ -164,3 +164,4 @@ return {
   opts = {},
   },
 }
+
