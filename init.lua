@@ -31,10 +31,19 @@ vim.keymap.set('n', '<A-j>', '<Cmd>wincmd j<CR>', { silent = true })
 vim.keymap.set('n', '<A-h>', '<Cmd>wincmd h<CR>', { silent = true })
 vim.keymap.set('n', '<A-l>', '<Cmd>wincmd l<CR>', { silent = true })
 
-vim.keymap.set('n', '<A-Down>', 'ddjP')
-vim.keymap.set('n', '<A-Up>', 'ddkP')
-vim.keymap.set('n', '<A-Right>', '>>')
-vim.keymap.set('n', '<A-Left>', '<<')
+vim.keymap.set('n', '<A-Down>', 'ddjP', { silent = true })
+vim.keymap.set('n', '<A-Up>', 'ddkP', { silent = true })
+vim.keymap.set('n', '<A-Right>', '>>', { silent = true, noremap = true })
+vim.keymap.set('n', '<A-Left>', '<<', { silent = true, noremap = true })
+vim.keymap.set('x', '<A-Right>', '>gv', { silent = true, noremap = true })
+vim.keymap.set('x', '<A-Left>', '<gv', { silent = true, noremap = true })
+vim.keymap.set('x', '>', '>gv', { silent = true, noremap = true })
+vim.keymap.set('x', '<', '<gv', { silent = true, noremap = true })
+-- vim.keymap.set('x', '<A-Down>', function()
+--     if vim.fn.mode() == 'V' then
+--         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<gv', true, false, true), 'x', false)
+--     end
+-- end, { silent = true, noremap = true })
 vim.keymap.set('n', '<A-R>', '<Cmd>e!<CR>', { silent = true, desc = 'Reload current file' })
 
 vim.keymap.set('n', '<C-_>', ':ToggleTerm direction=float<CR>', { silent = true, desc = 'Open terminal' })
@@ -43,8 +52,6 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
 
 vim.keymap.set('n', '<leader>to', function() vim.opt.scrolloff = 999 - vim.o.scrolloff end, { silent = true, desc = 'Toggle ' })
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', { silent = true })
-vim.keymap.set('v', '<', '<gv')
-vim.keymap.set('v', '>', '>gv')
 
 -- vim.keymap.set('n', '<leader>e', function()
 --   require("telescope").extensions.file_browser.file_browser()
@@ -204,8 +211,6 @@ vim.opt.sidescroll = 1
 vim.opt.sidescrolloff = 16
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
--- vim.api.nvim_set_option('shiftwidth', 2)
--- vim.api.nvim_set_option('tabstop', 2)
 
 vim.opt.list = true
 vim.opt.listchars = {
@@ -226,4 +231,27 @@ vim.keymap.set("n", "<leader>e", function()
     vim.cmd("Neotree filesystem reveal left")
   end
 end, { desc = "Neo-tree focus/open" })
+
+local function add_while_true()
+    vim.api.nvim_put({ 'while (1)' }, 'c', true, true)
+end
+
+local function add_for_loop()
+    local var_type = vim.fn.input("Variable type: ")
+    local var_name = vim.fn.input("Variable name: ")
+    local it_count = vim.fn.input("Iteration count: ")
+    vim.api.nvim_put({ "for (" .. var_type .. " " .. var_name .. " = 0; " .. var_name .. " < " .. it_count .. "; ++" .. var_name .. ")" }, 'c', true, true)
+end
+
+require("which-key").add({
+    { '<leader>L', group = "C Loops" },
+    { '<leader>L1', add_while_true, desc = "while true" },
+    { '<leader>Lf', add_for_loop, desc = "for loop" }
+})
+
+vim.filetype.add({
+    extension = {
+        h = "c",
+    },
+})
 
