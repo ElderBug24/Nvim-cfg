@@ -9,7 +9,7 @@
   "blink.compat": { "branch": "main", "commit": "2ed6d9a28b07fa6f3bface818470605f8896408c" },
   "cmp-dap": { "branch": "master", "commit": "ea92773e84c0ad3288c3bc5e452ac91559669087" },
   "eldritch.nvim": { "branch": "master", "commit": "c9131a5a11f00a2f428f563a4eb2c4aeb680d963" },
-  "fff.nvim": { "branch": "main", "commit": "d5b4abd2ac22ba42a787c07b6c5d21b76918262f" },
+  "fff.nvim": { "branch": "main", "commit": "28fce4145a3aa6ee7ab72de010539a498365aa45" },
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
   "gitsigns.nvim": { "branch": "main", "commit": "7010000889bfb6c26065e0b0f7f1e6aa9163edd9" },
   "guess-indent.nvim": { "branch": "main", "commit": "84a4987ff36798c2fc1169cbaff67960aed9776f" },

@@ -3,7 +3,7 @@ return {
   opts = {
     features = {
       codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = false, -- enable/disable inlay hints on start
+      inlay_hints = true, -- enable/disable inlay hints on start
       semantic_tokens = false, -- enable/disable semantic token highlighting
     },
     formatting = {
@@ -14,38 +14,38 @@ return {
         on_attach = function(client, bufnr)
           -- client.handlers["textDocument/publishDiagnostics"] = function() end
 
-          client.server_capabilities = {
-            definitionProvider = true,
-            declarationProvider = true,
-            inlayHintProvider = true,
-            typeDefinitionProvider = true,
-            compilationDatabase = {
-              automaticReload = true
-            },
-            textDocumentSync = {
-              change = 2,
-              openClose = true,
-              save = true
-            },
-            semanticTokensProvider = {
-              full = {
-                delta = true
-              },
-              legend = {
-                tokenModifiers = { "declaration", "definition", "deprecated", "deduced", "readonly", "static", "abstract", "virtual", "dependentName", "defaultLibrary", "usedAsMutableReference", "usedAsMutablePointer", "constructorOrDestructor", "userDefined", "functionScope", "classScope", "fileScope", "globalScope" },
-                tokenTypes = { "variable", "variable", "parameter", "function", "method", "function", "property", "variable", "class", "interface", "enum", "enumMember", "type", "type", "unknown", "namespace", "typeParameter", "concept", "type", "macro", "modifier", "operator", "bracket", "label", "comment" }
-              },
-              range = false
-            },
-            -- astProvider = true,
-            -- callHierarchyProvider = true,
-            -- clangdInlayHintsProvider = true,
-            completionProvider = {
-              resolveProvider = false,
-              triggerCharacters = { ".", "<", ">", ":", '"', "/", "*" }
-            },
-            hoverProvider = true,
-          }
+          -- client.server_capabilities = {
+          --   definitionProvider = true,
+          --   -- declarationProvider = true,
+          --   inlayHintProvider = true,
+          --   -- typeDefinitionProvider = true,
+          --   compilationDatabase = {
+          --     automaticReload = true
+          --   },
+          --   textDocumentSync = {
+          --     change = 2,
+          --     openClose = true,
+          --     save = true
+          --   },
+          --   -- semanticTokensProvider = {
+          --   --   full = {
+          --   --     delta = true
+          --   --   },
+          --   --   legend = {
+          --   --     tokenModifiers = { "declaration", "definition", "deprecated", "deduced", "readonly", "static", "abstract", "virtual", "dependentName", "defaultLibrary", "usedAsMutableReference", "usedAsMutablePointer", "constructorOrDestructor", "userDefined", "functionScope", "classScope", "fileScope", "globalScope" },
+          --   --     tokenTypes = { "variable", "variable", "parameter", "function", "method", "function", "property", "variable", "class", "interface", "enum", "enumMember", "type", "type", "unknown", "namespace", "typeParameter", "concept", "type", "macro", "modifier", "operator", "bracket", "label", "comment" }
+          --   --   },
+          --   --   range = false
+          --   -- },
+          --   -- astProvider = true,
+          --   -- callHierarchyProvider = true,
+          --   -- clangdInlayHintsProvider = true,
+          --   -- completionProvider = {
+          --   --   resolveProvider = false,
+          --   --   triggerCharacters = { ".", "<", ">", ":", '"', "/", "*" }
+          --   -- },
+          --   hoverProvider = true,
+          -- }
 
           -- client.server_capabilities = {
           --   astProvider = true,

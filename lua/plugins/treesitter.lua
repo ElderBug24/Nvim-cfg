@@ -4,15 +4,22 @@
 
 ---@type LazySpec
 return {
-  "nvim-treesitter/nvim-treesitter",
-  opts = {
-    ensure_installed = {
-      "lua",
-      "vim",
-      -- add more arguments for adding more treesitter parsers
-    },
-    indent = {
-      enable = false,
-    },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    enabled = false,
   },
 }
+
+-- return {
+--   "nvim-treesitter/nvim-treesitter",
+--   opts = {
+--     ensure_installed = {
+--       "lua",
+--       "vim",
+--       -- add more arguments for adding more treesitter parsers
+--     },
+--     indent = {
+--       enable = false,
+--     },
+--   },
+-- }
