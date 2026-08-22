@@ -37,13 +37,14 @@ return {
               },
               range = false
             },
-            astProvider = true,
-            callHierarchyProvider = true,
-            clangdInlayHintsProvider = true,
+            -- astProvider = true,
+            -- callHierarchyProvider = true,
+            -- clangdInlayHintsProvider = true,
             completionProvider = {
               resolveProvider = false,
               triggerCharacters = { ".", "<", ">", ":", '"', "/", "*" }
             },
+            hoverProvider = true,
           }
 
           -- client.server_capabilities = {
