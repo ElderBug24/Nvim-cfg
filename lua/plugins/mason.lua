@@ -6,12 +6,13 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
       ensure_installed = {
-        "lua-language-server",
         "clangd",
-        "stylua",
+        -- "lua-language-server",
+        -- "stylua",
         -- "debugpy",
-        "tree-sitter-cli",
+        -- "tree-sitter-cli",
       },
+      automatic_enable = false
     },
   },
 }

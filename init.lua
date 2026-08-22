@@ -255,3 +255,18 @@ vim.filetype.add({
     },
 })
 
+-- vim.lsp.config("clangd", {
+--     on_attach = function(client, bufnr)
+--         local definition = client.server_capabilities.definitionProvider
+--         client.server_capabilities = {
+--             definitionProvider = definition
+--         }
+--         vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
+--             buffer = bufnr,
+--             desc = "Go to definition"
+--         })
+--     end
+-- })
+
+-- vim.lsp.enable("clangd")
+
