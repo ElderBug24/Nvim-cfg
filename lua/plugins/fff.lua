@@ -12,17 +12,17 @@ return {
     lazy = false,
     keys = {
       {
-        "ff",
+        "<leader>ff",
         function() return require("fff").find_files() end,
         desc = "Find files",
       },
       {
-        "fg",
+        "<leader>fg",
         function() return require("fff").live_grep() end,
         desc = "Live grep",
       },
       {
-        "fz",
+        "<leader>fz",
         function()
           return require("fff").live_grep {
             grep = { modes = { "fuzzy", "plain" } },
@@ -31,7 +31,7 @@ return {
         desc = "Fuzzy grep",
       },
       {
-        "fc",
+        "<leader>fc",
         function()
           return require("fff").live_grep {
             query = vim.fn.expand "<cword>",
@@ -40,7 +40,7 @@ return {
         desc = "Search current word",
       },
       {
-        "Ff",
+        "<leader>Ff",
         function()
           return require("fff").find_files {
             cwd = vim.fn.input("Directory: ", "", "dir"),
@@ -49,7 +49,7 @@ return {
         desc = "Find files in directory",
       },
       {
-        "Fg",
+        "<leader>Fg",
         function()
           return require("fff").live_grep {
             cwd = vim.fn.input("Directory: ", "", "dir"),
@@ -58,7 +58,7 @@ return {
         desc = "Live grep in directory",
       },
       {
-        "Fz",
+        "<leader>Fz",
         function()
           return require("fff").live_grep {
             cwd = vim.fn.input("Directory: ", "", "dir"),
@@ -68,7 +68,7 @@ return {
         desc = "Fuzzy grep in directory",
       },
       {
-        "Fc",
+        "<leader>Fc",
         function()
           return require("fff").live_grep {
             cwd = vim.fn.input("Directory: ", "", "dir"),
